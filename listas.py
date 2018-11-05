@@ -12,11 +12,13 @@ def sumarAcumulado(lista):
     return nuevaLista
 
 
+# Función que toma  una lista y regresa una nueva sin el primer y úlirmo valor.
 def recortarLista(lista):
     nuevaLista = lista[1:len(lista)-1]
     return nuevaLista
 
 
+# Función que checa si los valores están ordenados o no.
 def estanOrdenados(lista):
     for k in range(1, len(lista)):
         if lista[k-1] < lista[k]:
@@ -26,6 +28,7 @@ def estanOrdenados(lista):
     return True
 
 
+# Función que recibe 2 palabras y dice si son anagramas o no.
 def sonAnagramas(palabra1, palabra2):
     palabra1 = palabra1.lower()
     palabra2 = palabra2.lower()
@@ -43,6 +46,7 @@ def sonAnagramas(palabra1, palabra2):
     return True
 
 
+# Función que recibe una lista y te dice si contiene valores duplicados o no.
 def hayDuplicados(lista):
     for n in range(len(lista)):
         for k in range(n+1, len(lista)):
@@ -51,6 +55,7 @@ def hayDuplicados(lista):
     return False
 
 
+# Función que recibe una lista y regresa la misma lista pero sin valores duplicados.
 def borrarDuplicados(lista):
     listaDeDuplicados = []
     for n in range(len(lista)):
@@ -64,6 +69,7 @@ def borrarDuplicados(lista):
     return lista
 
 
+# Función principal que checa todas las demás funciones.
 def main():
     # Listas para probar
     a = [1, 2, 3, 4, 5]
@@ -80,6 +86,7 @@ def main():
     o, p = "", ""
     x = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
     x2 = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+    # Probar muchos casos diferentes para ver que las funciones hagan lo que deberían hacer.
     print("Ejercicio 1:")
     print("La lista", a, "regresa la lista acumulada", sumarAcumulado(a))
     print("La lista", b, "regresa la lista acumulada", sumarAcumulado(b))
@@ -117,4 +124,5 @@ def main():
     print("La lista", b, "eliminando los duplicados se vuelve ", borrarDuplicados(b))
     print("La lista", x, "eliminando los duplicados se vuelve ", borrarDuplicados(x2))
 
+# Llamar a la función principal
 main()
