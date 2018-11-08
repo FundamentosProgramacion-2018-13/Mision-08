@@ -29,6 +29,7 @@ def estanOrdenados(listaTres):
     else:
         return True
 
+    
 # Funcion que recibe 2 cadenas, regresa True (ANAGRAMAS) o False (otro caso)
 def sonAnagramas(cadenaUno, cadenaDos):
     cadenaUnoM = list(cadenaUno.upper())
@@ -40,6 +41,7 @@ def sonAnagramas(cadenaUno, cadenaDos):
     else:
         return False
 
+    
 # Funcion que recibe una lista de numeros enteros, regresa True (datos copiados) o False (datos unicos)
 def hayDuplicados(listaCuatro):
     for dato in listaCuatro:
