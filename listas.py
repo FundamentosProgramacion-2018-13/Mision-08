@@ -21,6 +21,7 @@ def recortarLista(listaNumeros):
 
     return listaRecortada
 
+
 # Esta función se encarga de mencionar si los números están ordenados o no
 def estanOrdenados(listaNumeros):
     listaOrdenanda = []
@@ -57,6 +58,7 @@ def hayDuplicados(listaNumeros):
         return True
     else:
         return False
+
 
 # Esta función se encarga de eliminar los números duplicados dentro de la lista
 def borrarDuplicados(listaNumeros):
@@ -98,8 +100,3 @@ def main():
     print("--------------------")
 
 main()
-
-
-
-
-
