@@ -1,0 +1,83 @@
+#encoding: UTF-8
+#Autor: Alek Fernando Howland Aguilar, A01747765
+#Descripción: Resolución de problemas con listas
+
+def sumarAcumulando(lista):
+    b = []
+    acumulador = 0
+    for n in lista:
+        acumulador += n
+        b.append(acumulador)
+    return b
+
+def recortarLista(lista):
+    if len(lista) >= 2:
+        lista.pop()
+        lista.pop(0)
+        return lista
+    else:
+        return []
+
+def estanOrdenados(lista):
+    for n in range(1, len(lista)):
+        if lista[n-1] > lista[n]:
+            return False
+
+    return True
+
+
+def sonAnagramas(a,b):
+    a = a.lower()
+    b = b.lower()
+    lista1 = list(a)
+    lista2 = list(b)
+
+    if len(lista1) != len(lista2):
+        return False
+
+    for letras in lista1:
+        if letras not in lista2:
+            return False
+    return True
+
+def hayDuplicados(lista):
+    lista.sort()
+    for n in range(1, len(lista)):
+        if lista[n-1] == lista[n]:
+            return True
+
+    return False
+
+
+def borrarDuplicados(lista):
+    lista = list(set(lista))
+    return lista
+
+
+
+#Recibe una lista y acumula la suma de sus valores
+a = [1, 2, 3]
+print(sumarAcumulando(a))
+
+
+#Se manda una lista como parametro, quita el primero y el ultimo
+b = [1,2,3,4,5]
+print(recortarLista(b))
+
+#Se mandan una lista, y decide si estan ordenados
+c = [7,23,15]
+print(estanOrdenados(c))
+
+#Recibe dos cadenas y determina si son anagramas
+a = "Roma"
+b = "Mora"
+print(sonAnagramas(a,b))
+
+#------------
+a = [1,2,3,1,4,5]
+print(hayDuplicados(a))
+
+#_----------------
+a = [1,3,4,5,6,8,9,8,9,9,9,8,7,6]
+print(borrarDuplicados(a))
+
