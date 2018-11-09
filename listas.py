@@ -1,5 +1,5 @@
 # Autor: David Isaí López Jaimes    A01748363
-# Programa que hace diferentes funciones, modificaciones a las listas
+# Programa que hace diferentes funciones, modificaciones a las listas y nuevas listas
 
 lista = [1,2,3,4,5]
 listaVacia = []
@@ -8,8 +8,7 @@ lista12 = [1,2,3]
 lista13 = [7,23,15]
 
 
-
-def sumarAcumulado(lista):
+def sumarAcumulado(lista):      # Función que suma i*1 de la lusta y o acumula
     lista2 = []
     acumulador = 0
     for valor in lista:
@@ -19,7 +18,7 @@ def sumarAcumulado(lista):
     return lista2
 
 
-def recortarLista(lista):
+def recortarLista(lista):           # Función que borra de una lista original en valor maximo y mínimo, regresa lista nueva
     lista2 = []
     for dato in lista:
         if dato != 0:
@@ -30,7 +29,7 @@ def recortarLista(lista):
     return lista2
 
 
-def estanOrdenados(lista):
+def estanOrdenados(lista):      # Verifica si la lista esta ordenada o no
     lista2 = []
     valor = 0
     for dato in lista:
@@ -42,8 +41,8 @@ def estanOrdenados(lista):
     return False
 
 
-def sonAnagramas(cadena1, cadena2):
-    unaLista = list(cadena2)
+def sonAnagramas(cadena1, cadena2):         # Función que verifica si 2 cadenas son anagramas
+    lista2 = list(cadena2)
 
     pos1 = 0
     aunOK = True
@@ -51,14 +50,14 @@ def sonAnagramas(cadena1, cadena2):
     while pos1 < len(cadena1) and aunOK:
         pos2 = 0
         encontrado = False
-        while pos2 < len(unaLista) and not encontrado:
-            if cadena1[pos1] == unaLista[pos2]:
+        while pos2 < len(lista2) and not encontrado:
+            if cadena1[pos1] == lista2[pos2]:
                 encontrado = True
             else:
                 pos2 = pos2 + 1
 
         if encontrado:
-            unaLista[pos2] = None
+            lista2[pos2] = None
         else:
             aunOK = False
 
@@ -67,19 +66,18 @@ def sonAnagramas(cadena1, cadena2):
     return aunOK
 
 
-def hayDuplicados(lista):
+def hayDuplicados(lista):       # Función que busca si hay valores repetidos en una lista y regresa True ó False
     repetido = []
 
     for valor in lista:
         if valor not in repetido:
             repetido.append(valor)
-    if len(repetido) == 0:
-        return True
-    else:
+    if len(repetido) == len(lista):
         return False
+    return True
 
 
-def borrarDuplicados(lista):
+def borrarDuplicados(lista):        # Función que borra valores duplicados de una lista
     lista2 = []
     for valor in lista:
         if valor not in lista2:
@@ -104,7 +102,7 @@ def main():
     lista7 = recortarLista(lista11)
     print("Lista original ", lista11, "regresa ", lista7)
 
-    print("\nEjercicio 3:")          # Casos ejemplo 2
+    print("\nEjercicio 3:")          # Casos ejemplo 3
     orden = estanOrdenados(lista)
     print("Lista original ", lista, "estan ordenados:  ", orden)
     orden2 = estanOrdenados(lista13)
@@ -112,10 +110,41 @@ def main():
     orden3 = estanOrdenados(lista12)
     print("Lista original ", lista12, "estan ordenados ", orden3)
 
+    print("\nEjercicio 4:")     # Casos ejemplo 4
+    cadena1 = 'Hola'
+    cadena2 = 'Hello'
+    anagrama1 = sonAnagramas(cadena1, cadena2)
+    print("Son anagramas %s y %s" % (cadena1, cadena2), " = ",anagrama1)
+    cadena1 = 'roma'
+    cadena2 = 'mora'
+    anagrama2 = sonAnagramas(cadena1, cadena2)
+    print("Son anagramas %s y %s" % (cadena1, cadena2), " = ",anagrama2)
+    cadena1 = 'ana'
+    cadena2 = 'ani'
+    anagrama3 = sonAnagramas(cadena1, cadena2)
+    print("Son anagramas %s y %s" % (cadena1, cadena2), " = ",anagrama3)
 
+    print("\nEjercicio 5:")      # Casos ejemplo 5
+    lst = [1,2,3,4,5]
+    duplicados = hayDuplicados(lst)
+    print("En la lista ", lst, "hay duplicados: ", duplicados)
+    lst2 = [1,2,3,4,3,5]
+    duplicados2 = hayDuplicados(lst2)
+    print("En la lista ", lst2, "hay duplicados: ", duplicados2)
+    lst3 = [5,7,8,6]
+    duplicados3 = hayDuplicados(lst3)
+    print("En la lista ", lst3, "hay duplicados: ", duplicados3)
 
-
-
+    print("\nEjercicio 6: ")        # Casos ejercicio 6
+    lsta = [1,8,4,3,8,5]
+    borrarDup = borrarDuplicados(lsta)
+    print("Lista ", lsta, "lista sin duplicados ", borrarDup)
+    lstb = [1, 2,3,4,4,5,5,]
+    borrarDup2 = borrarDuplicados(lstb)
+    print("Lista ", lstb, "lista sin duplicados ", borrarDup2)
+    lstc = [29,56,7,7,8,8,89]
+    borrarDup3 = borrarDuplicados(lstc)
+    print("Lista ", lstc, "lista sin duplicados ", borrarDup3)
 
 
 
