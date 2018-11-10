@@ -1,7 +1,7 @@
 #Autor: Víctor Manuel Rodríguez Loyola
 #Misión 8
 
-def sumarAcumulado(lista):
+def sumarAcumulado(lista): #Regresa una nueva lista con el acumulado de la suma de todos los números de la lista
     nuevaLista= []
     acumulado=0
     for numeros in lista:
@@ -10,15 +10,15 @@ def sumarAcumulado(lista):
     return nuevaLista
 
 
-def recortarLista(lista):
-    nuevalista= list(lista)
-    if len(nuevalista)>0:
-       nuevalista.remove(nuevalista[0])
-       nuevalista.remove(len(nuevalista)+1)
-    return nuevalista
+def recortarLista(lista): #Se ingresa una lista y se regresa eliminando el primer y último número de la misma
+    nuevaLista= list(lista)
+    if len(nuevaLista)>0:
+       nuevaLista.remove(nuevaLista[0])
+       nuevaLista.remove(len(nuevaLista)+1)
+    return nuevaLista
 
 
-def estanOrdenados(lista):
+def estanOrdenados(lista): #Regresa True si los elementos de una lista ingresada están en orden, regresa False de lo contrario.
     resta=lista[len(lista)-1]
     for indice in range(len(lista)-2,-1,-1):
         resta-=lista[indice]
@@ -29,7 +29,7 @@ def estanOrdenados(lista):
         return False
 
 
-def sonAnagramas(palabra1,palabra2):
+def sonAnagramas(palabra1,palabra2): #Compara dos palabras y regresa True si son anagramas, False en caso contrario.
     palUno= list(palabra1)
     palDos= list(palabra2)
     if len(palUno)!=len(palDos):
@@ -42,7 +42,7 @@ def sonAnagramas(palabra1,palabra2):
                 return False
 
 
-def hayDuplicados(lista):
+def hayDuplicados(lista): #Se ingresa una lista y regresa True si en esa lista hay números duplicados, False de lo contrario
     duplicados=0
     if len(lista)==0:
         duplicados= False
@@ -56,7 +56,7 @@ def hayDuplicados(lista):
     return duplicados
 
 
-def borrarDuplicados(lista):
+def borrarDuplicados(lista): #Se ingresa una lista y se regresa la misma lista eliminando los números duplicados
     duplicados = 0
     for k in lista:
         duplicados = lista.count(k)
