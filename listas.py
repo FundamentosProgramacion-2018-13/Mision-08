@@ -76,6 +76,8 @@ def main():
     estanOrdenados(lista)
     sonAnagramas()
     estanOrdenados(lista)
+    hayDuplicados(lista)
+    borrarDuplicados(lista)
 
 
 
