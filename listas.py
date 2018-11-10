@@ -76,3 +76,14 @@ def borrarDuplicados(listaEnteros):
 
     return listaEnteros
 
+
+#Función main para probar casos
+def main():
+    print(sumaracumulado([1,2,3,4,5]))
+    print(recortarLista([1,2,3,4,5]))
+    print(estanOrdenados([1,2,3]))
+    print(sonAnagramas("rosa", "asor"))
+    print(hayDuplicados([1,1,2,3,4,6,8,6]))
+    print(borrarDuplicados([1,1,2,5,6,7,6]))
+
+
