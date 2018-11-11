@@ -3,6 +3,7 @@
 # Descripción: Programa que lee listas y modifica los datos dentro de ellas.
 
 
+# Función que recibe una lista, suma sus datos y regresa una nueva lista con la suma de los datos.
 def sumarAcumulado(lista):
     sumar = 0
     sumarALista = []
@@ -13,12 +14,14 @@ def sumarAcumulado(lista):
     return sumarALista
 
 
+# Función que recibe una lista y quita remueve el primer y último número de la lista.
 def recortarLista(lista):
 
     listaParaRecordar = lista[1:(len(lista) - 1)]
     return listaParaRecordar
 
 
+# Función que checa si la lista está ordenada.
 def estanOrdenados(lista):
     for valor in range(1, len(lista)):
         if lista[valor - 1] > lista[valor]:
@@ -26,6 +29,7 @@ def estanOrdenados(lista):
     return True
 
 
+# Función que checa si las cadenas son anagramas.
 def sonAnagramas(cadena1, cadena2):
     listaA1 = list(cadena1)
     listaA2 = list(cadena2)
@@ -38,6 +42,7 @@ def sonAnagramas(cadena1, cadena2):
         return False
 
 
+# Función que recibe una lista y checa si hay más de un solo número.
 def hayDuplicados(lista):
     for valor in lista:
         if lista.count(valor) > 1:
@@ -45,14 +50,16 @@ def hayDuplicados(lista):
     return False
 
 
+# Función que recibe una lista y borra los números que se repiten dentro de ella.
 def borrarDuplicados(lista):
-    lista.sort
+    lista.sort()
     for valor in lista:
         while lista.count(valor) > 1:
             lista.remove(valor)
     return lista
 
 
+# Función principal que envía listas a las funciones e imprime los reultados de cada ejercicio.
 def main():
     print("Ejercicio 1:")
     a = [1, 2, 3]
@@ -100,5 +107,6 @@ def main():
     print("Lista original:  [5, 5, 8, 6, 10, 10]", "regresa la lista sin duplicados", borrarDuplicados(k))
 
 
+# Llamada a la función principal.
 main()
 
